@@ -25,12 +25,12 @@ RUN apt-get install -y software-properties-common build-essential git-core g++ v
 # Install the CLIPS library
 RUN add-apt-repository -y ppa:timn/clips
 RUN apt-get update
-RUN apt-get install libclipsmm-dev
+RUN apt-get install -y libclipsmm-dev
 
 # Install g++-4.9
 RUN add-apt-repository ppa:ubuntu-toolchain-r/test
 RUN apt-get update
-RUN apt-get install g++-4.9
+RUN apt-get install -y g++-4.9
 
 # Make sure we have ROS set up
 RUN source /opt/ros/indigo/setup.bash
