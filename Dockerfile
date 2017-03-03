@@ -49,7 +49,6 @@ RUN wstool merge https://raw.githubusercontent.com/karpase/ros-rcll_rosinstall/m
 RUN wstool update
 WORKDIR /home/rcll/ros_fawkes_ws
 RUN /bin/bash -c ". /opt/ros/indigo/setup.bash; cd /home/rcll/ros_fawkes_ws; catkin_make"
-RUN /bin/bash -c "source /home/rcll/ros_fawkes_ws/devel/setup.bash"
 
 # Setup fawkes
 WORKDIR /home/rcll
@@ -57,7 +56,7 @@ RUN wget https://files.fawkesrobotics.org/releases/fawkes-robotino-2015.tar.bz2
 RUN bunzip2 fawkes-robotino-2015.tar.bz2
 RUN tar -xvf fawkes-robotino-2015.tar                  
 WORKDIR /home/rcll/fawkes-robotino
-RUN make clean all gui
+RUN /bin/bash -c ". /opt/ros/indigo/setup.bash; make clean all gui"
 
 # Setup the ROSPlan/RCLL interface packages
 WORKDIR /home/rcll
@@ -68,8 +67,4 @@ RUN wstool init .
 RUN wstool merge https://raw.githubusercontent.com/karpase/ros-rcll_rosinstall/master/rcll_rosplan.rosinstall
 RUN wstool update
 WORKDIR /home/rcll/rosplan_ws
-RUN /bin/bash -c ". /opt/ros/indigo/setup.bash; /home/rcll/rosplan_ws; FAWKESDIR=/home/rcll/fawkes-robotino CC=gcc-4.9 CXX=g++-4.9 CFLAGS=-std=c++1y CXXFLAGS=-std=c++1y catkin_make"
-
-
-
-
+RUN /bin/bash -c ". /home/rcll/ros_fawkes_ws/devel/setup.bash; /home/rcll/rosplan_ws; FAWKES_DIR=/home/rcll/fawkes-robotino CC=gcc-4.9 CXX=g++-4.9 CFLAGS=-std=c++1y CXXFLAGS=-std=c++1y catkin_make"
