@@ -1,0 +1,40 @@
+- git:
+    local-name: fawkes_msgs
+    uri: https://git.fawkesrobotics.org/fawkes_msgs.git
+- git:
+    local-name: rcll_fawkes_sim
+    uri: https://github.com/timn/ros-rcll_fawkes_sim.git
+- git:
+    local-name: rcll_fawkes_sim_msgs
+    uri: https://github.com/timn/ros-rcll_fawkes_sim_msgs.git
+- git:
+    local-name: rcll_refbox_peer
+    uri: https://github.com/timn/ros-rcll_refbox_peer.git
+- git:
+    local-name: rcll_ros
+    uri: https://github.com/timn/ros-rcll_ros.git
+- git:
+    local-name: rcll_ros_msgs
+    uri: https://github.com/timn/ros-rcll_ros_msgs.git
+- git:
+    local-name: rosplan_interface_behaviorengine
+    uri: https://github.com/timn/rosplan_interface_behaviorengine.git
+- git:
+    local-name: rosplan_interface_rcllrefbox
+    uri: https://github.com/timn/rosplan_interface_rcllrefbox.git
+- git:
+    local-name: ROSPlan
+    uri: https://github.com/timn/ROSPlan.git
+- git:
+    local-name: occupancy_grid_utils
+    uri: https://github.com/clearpathrobotics/occupancy_grid_utils.git
+- git:
+    local-name: mongodb_store
+    uri: https://github.com/strands-project/mongodb_store.git
+
+
+
+
+
+
+
