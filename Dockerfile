@@ -33,7 +33,7 @@ RUN apt-get update
 RUN apt-get install -y g++-4.9
 
 # Make sure we have ROS set up
-RUN source /opt/ros/indigo/setup.bash
+RUN /bin/bash -c "source /opt/ros/indigo/setup.bash"
 
 # Crate our working directory
 RUN mkdir /home/rcll
@@ -49,7 +49,7 @@ RUN wstool merge https://rawgit.com/karpase/ros-rcll_rosinstall/master/ros_fawke
 RUN wstool update
 WORKDIR /home/rcll/ros_fawkes_ws
 RUN catkin_make
-RUN source /home/rcll/ros_fawkes_ws/devel/setup.bash
+RUN /bin/bash -c "source /home/rcll/ros_fawkes_ws/devel/setup.bash"
 
 # Setup fawkes
 RUN wget https://files.fawkesrobotics.org/releases/fawkes-robotino-2015.tar.bz2
@@ -69,8 +69,4 @@ RUN wstool merge https://raw.githubusercontent.com/karpase/ros-rcll_rosinstall/m
 RUN wstool update
 WORKDIR /home/rcll/rosplan_ws
 RUN CC=gcc-4.9 CXX=g++-4.9 CFLAGS=-std=c++1y CXXFLAGS=-std=c++1y catkin_make
-RUN source /home/rcll/rosplan_ws/devel/setup.bash
-
-
-
-
+RUN /bin/bash -c "source /home/rcll/rosplan_ws/devel/setup.bash"
