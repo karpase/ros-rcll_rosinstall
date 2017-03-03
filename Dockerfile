@@ -68,7 +68,7 @@ RUN wstool init .
 RUN wstool merge https://raw.githubusercontent.com/karpase/ros-rcll_rosinstall/master/rcll_rosplan.rosinstall
 RUN wstool update
 WORKDIR /home/rcll/rosplan_ws
-RUN /bin/bash -c ". /opt/ros/indigo/setup.bash; /home/rcll/rosplan_ws; CC=gcc-4.9 CXX=g++-4.9 CFLAGS=-std=c++1y CXXFLAGS=-std=c++1y catkin_make"
+RUN /bin/bash -c ". /opt/ros/indigo/setup.bash; /home/rcll/rosplan_ws; FAWKESDIR=/home/rcll/fawkes-robotino CC=gcc-4.9 CXX=g++-4.9 CFLAGS=-std=c++1y CXXFLAGS=-std=c++1y catkin_make"
 
 
 
