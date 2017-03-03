@@ -1,0 +1,6 @@
+- git:
+    local-name: fawkes_msgs
+    uri: https://git.fawkesrobotics.org/fawkes_msgs.git
+- git:
+    local-name: rcll_fawkes_sim_msgs
+    uri: https://github.com/timn/ros-rcll_fawkes_sim_msgs.git
