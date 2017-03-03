@@ -17,6 +17,9 @@
     local-name: rosplan_interface_rcllrefbox
     uri: https://github.com/timn/rosplan_interface_rcllrefbox.git
 - git:
+    local-name: rosplan_initial_situation
+    uri: https://github.com/timn/rosplan_initial_situation.git
+- git:
     local-name: ROSPlan
     uri: https://github.com/timn/ROSPlan.git
 - git:
